@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">animeID</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >Inicio</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="tables.html">tablas</a>
@@ -31,6 +45,58 @@
         </div>
       </nav>
     </header>
+    <div class="container mb-5" style="width: 400px;">
+      <div class="card">
+        <div class="card-header ">
+          Registro
+        </div>
+        <div class="card-body">
+          <form id="register-form" method="post">
+            <div class="mb-3">
+              <label for="id" class="form-label">ID</label>
+              <input type="number" class="form-control" id="id" required>
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" required>
+            </div>
+            <div class="mb-3">
+              <label for="edad" class="form-label">Edad</label>
+              <input type="number" class="form-control" id="edad" required>
+            </div>
+            <div class="mb-3">
+              <label for="sexo" class="form-label">Sexo</label>
+              <select id="sexo">
+                <option value="default"></option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="NA">Prefiero no decirlo</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="anime" class="form-label">Anime Favorito</label>
+              <input type="text" class="form-control" id="anime">
+            </div>
+            <div class="mb-3">
+              <label for="celular" class="form-label">Celular</label>
+              <input type="number" class="form-control" id="celular" required>
+            </div>
+            <div class="mb-3">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="ciudad" required>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Registrar
+            </button>
+          </form>
+          <span id="register-span"></span>
+        </div>
+      </div>
+    </div>
     <div class="table-responsive">
       <table class="table" id="user-table">
         <thead>
@@ -40,47 +106,58 @@
             <th scope="col">Apellido</th>
             <th scope="col">Edad</th>
             <th scope="col">Sexo</th>
-            <th scope="col">Deporte</th>
-            <th scope="col">Número</th>
-            <th scope="col">Lugar</th>
+            <th scope="col">Anime Fav</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Ciudad</th>
           </tr>
         </thead>
-        <tbody>
-          
-        </tbody>
+        <tbody id="table-body"></tbody>
       </table>
     </div>
     <footer>
-      <div class="container-fluid mt-5" >
-
+      <div class="container-fluid mt-5">
         <div class="row p-5 bg-secondary text-white">
-
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h5">AnimeID</p>
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5">AnimeID</p>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5">links</p>
+            <p>
+              <a
+                class="text-white text-decoration-none mb-3"
+                href="https://www3.animeflv.net/"
+                target="_blank"
+                >Animeflv</a
+              >
+            </p>
+            <p>
+              <a
+                class="text-white text-decoration-none mb-3"
+                href="https://jkanime.net/"
+                target="_blank"
+                >jkanime</a
+              >
+            </p>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5">tablas</p>
+            <div class="mb-3">
+              <a class="text-white text-decoration-none" href="tables.html"
+                >tablas</a
+              >
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h5">links</p>
-                <p><a class="text-white text-decoration-none mb-3" href="https://www3.animeflv.net/" target="_blank">Animeflv</a></p>
-                <p><a class="text-white text-decoration-none mb-3" href="https://jkanime.net/" target="_blank">jkanime</a></p>
-                
-            </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h5">tablas</p>
-                <div class="mb-3">
-                  <a class="text-white text-decoration-none" href="index2.html">tablas</a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h5">contactos</p>
-            </div>
-
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5">contactos</p>
+          </div>
         </div>
-
-    </div>
-
+      </div>
     </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/index.js"></script>
+  </body>
 </html>
