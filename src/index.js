@@ -50,10 +50,20 @@ const renderTable = () => {
             <td>${e.celular}</td>
             <td>${e.ciudad}</td>
             </tr>`
-        })
+    })
         
-        $tableBody.innerHTML = inner
+    $tableBody.innerHTML = inner
+}
+
+const verifyId = (id) => {
+    for (let i = 0; i < listaUsuarios.length; i += 1) {
+        if (listaUsuarios[i].id === id) {
+            return false
+        }
     }
+
+    return true
+}
     
 renderTable()
 
@@ -68,15 +78,21 @@ $registerForm?.addEventListener('submit', e => {
     const celular = "" + $("#celular").value
     const ciudad = $("#ciudad").value
 
+    
+    const verify = verifyId(id)
+
     if (sexo === "default") {
         $registerSpan.innerHTML = "El campo 'sexo' no puede estar en blanco"
         $registerSpan.style.color = "red"
     } else if (celular.length > 10 || celular.length < 10) {
         $registerSpan.innerHTML = "El campo 'celular' debe tener 10 digitos"
         $registerSpan.style.color = "red"
+    } else if (!verify) {
+        $registerSpan.innerHTML = "Este 'id' ya esta registrado"
+        $registerSpan.style.color = "red"
+    } else {
+        listaUsuarios.push({id, nombre, apellido, edad, sexo, anime, celular, ciudad})
     }
 
-    listaUsuarios.push({id, nombre, apellido, edad, sexo, anime, celular, ciudad})
-    
     renderTable()
 })
